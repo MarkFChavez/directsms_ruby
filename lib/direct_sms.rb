@@ -12,7 +12,7 @@ module DirectSms
       @username = username
       @password = password
 
-      options.each { |k, v| send("#{k}=", v) }
+      options.each { |k, v| self.send("#{k}=", v) }
     end
     
     def balance
@@ -26,7 +26,7 @@ module DirectSms
       self.class.get("/s3/http/get_balance", options)
     end
 
-    def send
+    def send_message
       options = {
         query: {
           username: @username,
