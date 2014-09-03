@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["markchav3z@gmail.com"]
   spec.summary       = %q{Wrapper for DirectSMS API}
   spec.description   = %q{Wrapper for DirectSMS API}
-  spec.homepage      = "https://github.com/mrkjlchvz/directsms"
+  spec.homepage      = "https://github.com/mrkjlchvz/directsms_ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
