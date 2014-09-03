@@ -35,7 +35,8 @@ To send an sms, you need to set the ff. attributes:
 * message - The content of your sms message
 * type - Only accepts two values; "1-way" & "2-way"
 * to - The recipient/s of the message
-* messageid - A unique identifier for the message. Used for tracking the reply of the receiver.
+* message_id - A unique identifier for the message. Used for tracking the reply of the receiver.
+* sender_id - Used for 1-way sms sending
 
       sms = DirectSms::Message.new(username, password)
       sms.message = "Hello, world!"
