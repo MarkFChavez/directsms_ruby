@@ -37,12 +37,12 @@ To send an sms, you need to set the ff. attributes:
 * to - The recipient/s of the message
 * messageid - A unique identifier for the message. Used for tracking the reply of the receiver.
 
-    sms = DirectSms::Message.new(username, password)
-    sms.message = "Hello, world!"
-    sms.type = "2-way" # -> enables the receiver to reply
-    sms.to = "+639919302930" # -> to send to multiple recipients, use "," as delimiter.
-    sms.messageid = "<id>"
-    sms.send_message
+      sms = DirectSms::Message.new(username, password)
+      sms.message = "Hello, world!"
+      sms.type = "2-way" # -> enables the receiver to reply
+      sms.to = "+639919302930" # -> to send to multiple recipients, use "," as delimiter.
+      sms.messageid = "<id>"
+      sms.send_message
 
 ### Errors
 
