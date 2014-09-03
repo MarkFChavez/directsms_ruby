@@ -32,10 +32,10 @@ To get your account's balance, simply:
 
 To send an sms, you need to set the ff. attributes:
 
-1. message - The content of your sms message
-2. type - Only accepts two values; "1-way" & "2-way"
-3. to - The recipient/s of the message
-4. messageid - A unique identifier for the message. Used for tracking the reply of the receiver.
+* message - The content of your sms message
+* type - Only accepts two values; "1-way" & "2-way"
+* to - The recipient/s of the message
+* messageid - A unique identifier for the message. Used for tracking the reply of the receiver.
 
     sms = DirectSms::Message.new(username, password)
     sms.message = "Hello, world!"
