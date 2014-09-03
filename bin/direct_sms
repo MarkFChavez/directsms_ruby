@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
 require 'direct_sms'
 
-sms = DirectSms::Message.new("mchavez", "skyhealth123", max_segments: 10, type: "2-way")
-sms.message = "hello, world!"
-sms.message_id = "ID244"
+sms = DirectSms::Message.new("username", "password", max_segments: 10, type: "2-way")
 sms.to = "+639178574111, +639193963389"
 
-puts sms.send_message
+puts sms.balance
