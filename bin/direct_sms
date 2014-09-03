@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+require 'direct_sms'
 
-sms = DirectSms::Message.new
+sms = DirectSms::Message.new("mchavez", "skyhealth123")
+sms.message = "hello, world!"
+sms.to = "+639193963389"
 
+puts sms.send

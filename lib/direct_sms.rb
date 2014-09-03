@@ -6,15 +6,13 @@ module DirectSms
     include HTTParty
 
     base_uri "api.directsms.com.au"
+    attr_accessor :message, :to, :max_segments, :type, :message_id
 
-    attr_accessor :message
-    attr_accessor :recipients
-
-    MAX_SEGMENTS = 10
-
-    def initialize(username, password)
+    def initialize(username, password, options = {})
       @username = username
       @password = password
+
+      options.each { |k, v| send("#{k}=", v) }
     end
     
     def balance
@@ -34,9 +32,10 @@ module DirectSms
           username: @username,
           password: @password,
           message: @message,
-          to: @recipients,
-          type: "2-way",
-          max_segments: MAX_SEGMENTS
+          to: @to,
+          type: @type,
+          max_segments: @max_segments,
+          messageid: @message_id
         }
       }
 
