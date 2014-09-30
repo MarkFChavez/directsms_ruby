@@ -15,7 +15,10 @@ module DirectSms
     
     def credit_balance
       options = { query: fetch_credentials }
-      self.class.get("/s3/http/get_balance", options)
+      response = self.class.get("/s3/http/get_balance", options) # returns credit: 50.0
+      response = response.split(" ").last
+
+      response
     end
 
     def send_message
