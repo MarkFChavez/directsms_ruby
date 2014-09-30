@@ -11,7 +11,7 @@ describe DirectSms do
       to_return(:status => 200, :body => "credit: 300.00", :headers => {})
 
       sms = DirectSms::Message.new(username: username, password: password)
-      expect(sms.balance.body).to eq "credit: 300.00"
+      expect(sms.credit_balance.body).to eq "credit: 300.00"
     end
   end
 

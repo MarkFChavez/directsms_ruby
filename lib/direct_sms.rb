@@ -13,7 +13,7 @@ module DirectSms
       attrs.each { |k, v| self.send("#{k}=", v) }
     end
     
-    def balance
+    def credit_balance
       options = { query: fetch_credentials }
       self.class.get("/s3/http/get_balance", options)
     end
