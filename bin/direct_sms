@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'direct_sms'
 
-sms = DirectSms::Message.new("username", "password", max_segments: 10, type: "2-way")
-sms.to = "+639178574111, +639193963389"
+sms = DirectSms::Message.new(max_segments: 10, type: "2-way")
+sms.to = "+639178574111"
 
-puts sms.balance
+puts sms.credit_balance

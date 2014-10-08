@@ -1,13 +1,23 @@
 require "direct_sms/version"
+require "direct_sms/configuration"
 require "httparty"
 
 module DirectSms
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield configuration
+  end
+
   class Message
     include HTTParty
 
     base_uri "api.directsms.com.au"
+
     attr_accessor :message, :to, :max_segments, :type, :message_id
-    attr_accessor :username, :password
 
     def initialize(attrs = {})
       attrs.each { |k, v| self.send("#{k}=", v) }
@@ -36,7 +46,7 @@ module DirectSms
     private
 
     def fetch_credentials
-      { username: username, password: password }
+      { username: DirectSms.configuration.username, password: DirectSms.configuration.password }
     end
   end
 end
